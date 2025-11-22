@@ -10,6 +10,9 @@ import { cn } from '@/lib/utils';
 
 const navLinks = [
   { href: '/', label: 'Home' },
+  { href: '/programs', label: 'Programs' },
+  { href: '/faculty', label: 'Faculty' },
+  { href: '/gallery', label: 'Gallery' },
 ];
 
 export default function Header() {
@@ -18,6 +21,20 @@ export default function Header() {
 
   const NavLink = ({ href, label, className }: { href: string; label: string, className?: string }) => {
     const isActive = pathname === href;
+    
+    if (href !== '/') {
+        return (
+            <span
+                className={cn(
+                    'text-sm font-medium text-muted-foreground cursor-not-allowed opacity-50',
+                    className
+                )}
+            >
+                {label}
+            </span>
+        );
+    }
+
     return (
       <Link
         href={href}
