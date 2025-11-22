@@ -12,7 +12,7 @@ const FloatingEnquiryButton = () => {
     return (
       <button
         onClick={openAdmissionModal}
-        className="fixed top-1/2 right-0 -translate-y-1/2 z-30 bg-primary text-primary-foreground py-2 px-1 rounded-l-md shadow-lg transform hover:bg-primary/90 transition-all duration-300 group"
+        className="fixed top-1/2 right-0 -translate-y-1/2 z-30 bg-primary text-primary-foreground py-3 px-2 rounded-l-md shadow-lg transform hover:bg-primary/90 transition-all duration-300 group"
         aria-label="Open Admission Enquiry Form"
       >
         <span className="block transform -rotate-90 whitespace-nowrap text-sm font-semibold tracking-wider">
