@@ -8,12 +8,11 @@ import Footer from './footer';
 import { Toaster } from "@/components/ui/toaster";
 
 const FloatingEnquiryButton = () => {
-    const { openAdmissionModal } = useApp();
     return (
       <button
-        onClick={openAdmissionModal}
-        className="fixed top-1/2 right-0 -translate-y-1/2 z-30 bg-primary text-primary-foreground py-3 px-4 rounded-l-md shadow-lg transform hover:bg-primary/90 transition-all duration-300 group flex items-center justify-center w-12 h-48"
+        className="fixed top-1/2 right-0 -translate-y-1/2 z-30 bg-primary text-primary-foreground py-3 px-4 rounded-l-md shadow-lg transform transition-all duration-300 group flex items-center justify-center w-12 h-48 cursor-not-allowed opacity-50"
         aria-label="Open Admission Enquiry Form"
+        disabled
       >
         <span className="block transform -rotate-90 whitespace-nowrap text-sm font-semibold tracking-wider">
           Admission Enquiry!
@@ -26,7 +25,7 @@ const FloatingEnquiryButton = () => {
 export function MainLayout({ children }: { children: React.ReactNode }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   
-  const openAdmissionModal = () => setIsModalOpen(true);
+  const openAdmissionModal = () => {};
   
   return (
     <AppProvider value={{ openAdmissionModal }}>
