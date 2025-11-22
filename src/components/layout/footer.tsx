@@ -1,6 +1,10 @@
+
+"use client";
+
 import Link from 'next/link';
 import { Facebook, Instagram, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
 
 function WhatsappIcon(props: React.ComponentProps<'svg'>) {
     return (
@@ -24,7 +28,12 @@ function WhatsappIcon(props: React.ComponentProps<'svg'>) {
 
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
 
   return (
     <footer className="bg-slate-800 text-slate-300">
